@@ -14,6 +14,10 @@ const allowedValues = [
   "9",
   "Backspace",
   "Tab",
+  "ArrowLeft",
+  "ArrowRight",
+  "ArrowUp",
+  "ArrowDown",
 ]
 
 export default class OtpInput extends Component {
