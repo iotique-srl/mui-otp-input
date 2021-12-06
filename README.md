@@ -1,30 +1,57 @@
-# mui-otp-input
+<p align="center">
+  <img src="https://static.igloo.ooo/logo-192.png" alt="Igloo logo" width="128"/>
+</p>
 
-> A MUI-based input for OTPs
+<h1 align="center">MUI OTP Input</h1>
 
-[![NPM](https://img.shields.io/npm/v/mui-otp-input.svg)](https://www.npmjs.com/package/mui-otp-input) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+A customizable input for numeric one-time passwords based on [MUI](https://mui.com/).
 
-## Install
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/23523551/144852579-c97643e5-bc97-48a6-9602-a59bedd75998.png" alt="Component screenshot" width="960"/>
+</p>
+
+# Installation
+
+Just download the library from [npm](https://www.npmjs.com/package/@igloo_cloud/mui-otp-input).
+
+**Using npm**
 
 ```bash
-npm install --save mui-otp-input
+npm install @igloo_cloud/mui-otp-input --save
 ```
 
-## Usage
+**Using Yarn**
 
-```jsx
-import React, { Component } from 'react'
-
-import MyComponent from 'mui-otp-input'
-import 'mui-otp-input/dist/index.css'
-
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
-}
+```bash
+yarn add @igloo_cloud/mui-otp-input
 ```
 
-## License
+# Usage
 
-MIT © [IglooCloud](https://github.com/IglooCloud)
+This library exports an `OtpInput` component as default. Once added to your app the component will accept the following props:
+
+| Name       | Type     | Default    | Description                                                                             |
+| ---------- | -------- | ---------- | --------------------------------------------------------------------------------------- |
+| characters | `number` | `4`        | Number of character fields to display.                                                  |
+| onChange   | `func`   | `() => {}` | Callback function that is called when the value of one of the character fields changes. |
+| value      | `array`  | `[]`       | An array on numbers corresponding to each of the character fields.                      |
+
+In addition to these props, the component will also accept all the props supported by [MUI Textfields](https://mui.com/api/text-field/)
+
+# Try it out
+
+Just clone this repository and run the following commands to open a live demo:
+
+**Using npm**
+
+```bash
+cd example
+npm start
+```
+
+**Using Yarn**
+
+```bash
+cd example
+yarn start
+```

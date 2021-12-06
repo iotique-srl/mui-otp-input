@@ -1,10 +1,22 @@
-import React from 'react'
+import OtpInput from "@igloo_cloud/mui-otp-input"
+import { Component } from "react"
 
-import { ExampleComponent } from 'mui-otp-input'
-import 'mui-otp-input/dist/index.css'
+export default class App extends Component {
+  state = {
+    code: [],
+  }
 
-const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  render() {
+    const { code } = this.state
+
+    return (
+      <div style={{ maxWidth: "512px", margin: "128px auto" }}>
+        <OtpInput
+          characters={6}
+          onChange={(code) => this.setState({ code })}
+          value={code}
+        />
+      </div>
+    )
+  }
 }
-
-export default App
