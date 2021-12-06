@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { TextField } from "@mui/material"
+import { TextField, Typography, FormHelperText } from "@mui/material"
 
 const allowedValues = [
   "0",
@@ -22,54 +22,79 @@ const allowedValues = [
 
 export default class OtpInput extends Component {
   render() {
-    const { characters = 4, value, onChange, style, ...otherProps } = this.props
+    const {
+      characters = 4,
+      value,
+      onChange,
+      style,
+      leadingCharacter,
+      ...otherProps
+    } = this.props
     const inputRefs = []
 
     return (
-      <div
-        style={{ display: "flex", justifyContent: "space-between", gap: "8px" }}
-      >
-        {new Array(characters).fill().map((_, index) => (
-          <TextField
-            {...otherProps}
-            key={"otp-input-" + index}
-            variant="outlined"
-            style={{
-              maxWidth: "56px",
-              ...style,
-            }}
-            inputProps={{
-              maxLength: 1,
-              style: {
+      <div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            gap: "8px",
+          }}
+        >
+          {leadingCharacter && (
+            <Typography
+              style={{
                 textAlign: "center",
                 fontSize: "20px",
                 padding: "14px",
                 height: "28px",
-              },
-            }}
-            inputRef={(input) => (inputRefs[index] = input)}
-            onChange={(event) => {
-              if (event.target.value.length === 1) {
-                inputRefs[index + 1]?.focus()
-              }
+              }}
+            >
+              {leadingCharacter}
+            </Typography>
+          )}
+          {new Array(characters).fill().map((_, index) => (
+            <TextField
+              {...otherProps}
+              key={"otp-input-" + index}
+              variant="outlined"
+              style={{
+                maxWidth: "56px",
+                ...style,
+              }}
+              inputProps={{
+                maxLength: 1,
+                style: {
+                  textAlign: "center",
+                  fontSize: "20px",
+                  padding: "14px",
+                  height: "28px",
+                },
+              }}
+              inputRef={(input) => (inputRefs[index] = input)}
+              onChange={(event) => {
+                if (event.target.value.length === 1) {
+                  inputRefs[index + 1]?.focus()
+                }
 
-              if (onChange) {
-                let tempValue = value
-                tempValue[index] = event.target.value
+                if (onChange) {
+                  let tempValue = value
+                  tempValue[index] = event.target.value
 
-                onChange(tempValue)
-              }
-            }}
-            onKeyDown={(event) => {
-              if (!allowedValues.includes(event.key)) {
-                event.preventDefault()
-              } else if (event.key === "Backspace" && !value[index]) {
-                inputRefs[index - 1]?.focus()
-              }
-            }}
-            value={value ? value[index] : undefined}
-          />
-        ))}
+                  onChange(tempValue)
+                }
+              }}
+              onKeyDown={(event) => {
+                if (!allowedValues.includes(event.key)) {
+                  event.preventDefault()
+                } else if (event.key === "Backspace" && !value[index]) {
+                  inputRefs[index - 1]?.focus()
+                }
+              }}
+              value={value ? value[index] : undefined}
+            />
+          ))}
+        </div>
       </div>
     )
   }

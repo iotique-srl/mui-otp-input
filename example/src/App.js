@@ -12,9 +12,10 @@ export default class App extends Component {
     return (
       <div style={{ maxWidth: "512px", margin: "128px auto" }}>
         <OtpInput
-          characters={6}
+          characters={5}
           onChange={(code) => this.setState({ code })}
           value={code}
+          leadingCharacter="B"
         />
       </div>
     )

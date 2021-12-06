@@ -30,11 +30,12 @@ yarn add @igloo_cloud/mui-otp-input
 
 This library exports an `OtpInput` component as default. Once added to your app the component will accept the following props:
 
-| Name       | Type     | Default    | Description                                                                             |
-| ---------- | -------- | ---------- | --------------------------------------------------------------------------------------- |
-| characters | `number` | `4`        | Number of character fields to display.                                                  |
-| onChange   | `func`   | `() => {}` | Callback function that is called when the value of one of the character fields changes. |
-| value      | `array`  | `[]`       | An array on numbers corresponding to each of the character fields.                      |
+| Name             | Type     | Default    | Description                                                                             |
+| ---------------- | -------- | ---------- | --------------------------------------------------------------------------------------- |
+| characters       | `number` | `4`        | Number of character fields to display.                                                  |
+| onChange         | `func`   | `() => {}` | Callback function that is called when the value of one of the character fields changes. |
+| value            | `array`  | `[]`       | An array on numbers corresponding to each of the character fields.                      |
+| leadingCharacter | `string` | `null`     | An optional character to display before the input.                                      |
 
 In addition to these props, the component will also accept all the props supported by [MUI Textfields](https://mui.com/api/text-field/)
 
