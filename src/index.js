@@ -28,6 +28,7 @@ export default class OtpInput extends Component {
       onChange,
       style,
       leadingCharacter,
+      onKeyDown,
       ...otherProps
     } = this.props
     const inputRefs = []
@@ -89,6 +90,10 @@ export default class OtpInput extends Component {
                   event.preventDefault()
                 } else if (event.key === "Backspace" && !value[index]) {
                   inputRefs[index - 1]?.focus()
+                }
+
+                if (onKeyDown) {
+                  onKeyDown(event)
                 }
               }}
               value={value ? value[index] : undefined}

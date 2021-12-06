@@ -1,6 +1,6 @@
 {
   "name": "@igloo_cloud/mui-otp-input",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A MUI-based input for OTPs",
   "author": "IglooCloud",
   "license": "MIT",
