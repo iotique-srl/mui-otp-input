@@ -37,7 +37,7 @@ This library exports an `OtpInput` component as default. Once added to your app 
 | value            | `array`  | `[]`       | An array on numbers corresponding to each of the character fields.                      |
 | leadingCharacter | `string` | `null`     | An optional character to display before the input.                                      |
 
-In addition to these props, the component will also accept all the props supported by [MUI Textfields](https://mui.com/api/text-field/)
+In addition to these props, the component will also accept all the props supported by [MUI Textfields](https://mui.com/api/text-field/).
 
 # Try it out
 
